@@ -27,9 +27,6 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-/**
- * @author willy
- */
 public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.ViewPagerViewHolder> {
 
 //    private GlideThread glideThread = new GlideThread();
@@ -144,21 +141,33 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
 
                         @Override
                         public boolean onDoubleTap(MotionEvent e) {
-                            holder.imageView.setVisibility(View.VISIBLE);
-                            holder.imageView.bringToFront();
-                            Glide.with(curActivity).load(R.drawable.ic_button_like_red).into(holder.likeButton);
-                            double x = (videoData.getLikeCount() + 1)/10000.0;
-                            java.text.DecimalFormat df = new java.text.DecimalFormat("#.00");
-                            String tmp = df.format(x);
-                            videoData.setLikeCount(videoData.getLikeCount() + 1);
-                            holder.mLikeNum.setText(tmp + "w");
-                            v.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    // 这里会在 1s 后执行
-                                    holder.imageView.setVisibility(View.INVISIBLE);
-                                }
-                            }, 1000);
+                            if(videoData.isLiked()){
+                                videoData.setLiked(false);
+                                Glide.with(curActivity).load(R.drawable.ic_button_like).into(holder.likeButton);
+                                double x = (videoData.getLikeCount() - 1)/10000.0;
+                                java.text.DecimalFormat df = new java.text.DecimalFormat("#.00");
+                                String tmp = df.format(x);
+                                videoData.setLikeCount(videoData.getLikeCount() - 1);
+                                holder.mLikeNum.setText(tmp + "w");
+                            }
+                            else{
+                                videoData.setLiked(true);
+                                holder.imageView.setVisibility(View.VISIBLE);
+                                holder.imageView.bringToFront();
+                                Glide.with(curActivity).load(R.drawable.ic_button_like_red).into(holder.likeButton);
+                                double x = (videoData.getLikeCount() + 1)/10000.0;
+                                java.text.DecimalFormat df = new java.text.DecimalFormat("#.00");
+                                String tmp = df.format(x);
+                                videoData.setLikeCount(videoData.getLikeCount() + 1);
+                                holder.mLikeNum.setText(tmp + "w");
+                                v.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        // 这里会在 1s 后执行
+                                        holder.imageView.setVisibility(View.INVISIBLE);
+                                    }
+                                }, 1000);
+                            }
                             return true;
                         }
 

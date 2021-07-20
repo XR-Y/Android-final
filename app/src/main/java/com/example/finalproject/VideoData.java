@@ -24,6 +24,8 @@ public class VideoData{
     @SerializedName("avatar")
     private String avatar;
 
+    private boolean isLiked = false;
+
     public String getAvatar() {
         return avatar;
     }
@@ -70,6 +72,14 @@ public class VideoData{
 
     public void setLikeCount(int likeCount) {
         this.likeCount = likeCount;
+    }
+
+    public boolean isLiked() {
+        return isLiked;
+    }
+
+    public void setLiked(boolean liked) {
+        isLiked = liked;
     }
 
     @Override
