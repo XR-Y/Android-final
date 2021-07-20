@@ -19,6 +19,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
+import com.bumptech.glide.request.RequestOptions;
 
 import jp.wasabeef.glide.transformations.BlurTransformation;
 import jp.wasabeef.glide.transformations.CropCircleTransformation;
@@ -154,11 +156,11 @@ public class SelfActivity extends AppCompatActivity {
 
 
         Glide.with(this).load(R.drawable.ic_avatar)
-                .bitmapTransform(new BlurTransformation(this, 25), new CenterCrop(this))
+                .apply(RequestOptions.bitmapTransform(new CircleCrop()))
                 .into(blurImageView);
 
         Glide.with(this).load(R.drawable.ic_avatar)
-                .bitmapTransform(new CropCircleTransformation(this))
+                .apply(RequestOptions.bitmapTransform(new CircleCrop()))
                 .into(avatarImageView);
 
         userNameTextView.setText("用户A");

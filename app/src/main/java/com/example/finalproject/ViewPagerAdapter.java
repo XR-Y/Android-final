@@ -19,6 +19,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
@@ -26,11 +27,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.ViewPagerViewHolder> {
     private Context curActivity;
@@ -50,7 +50,10 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
         VideoData videoData = Videos.videos.get(Videos.curVideoId);
 
         holder.videoView.setVideoPath(videoData.getFeedUrl());
-        Glide.with(this.curActivity).load(videoData.getAvatar()).into(holder.avatarView);
+        Glide.with(this.curActivity)
+                .load(videoData.getAvatar())
+                .apply(RequestOptions.bitmapTransform(new CircleCrop()))
+                .into(holder.avatarView);
         double x = (videoData.getLikeCount() + 1)/10000.0;
         java.text.DecimalFormat df = new java.text.DecimalFormat("#.00");
         String tmp = df.format(x);
@@ -105,7 +108,9 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
                 VideoActivity.hideKeyboard((Activity) curActivity, holder.getComment);
                 holder.ensure.setVisibility(View.INVISIBLE);
                 holder.getComment.setVisibility(View.INVISIBLE);
+                holder.getComment.setText("");
                 holder.textView.setText("最新评论：" + comment);
+                Toast.makeText((Activity) curActivity, "评论成功！", Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -33,12 +33,14 @@
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:padding="4dp"
-        android:visibility="invisible"
         android:text="GO!"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/comment_view" />
+        app:layout_constraintTop_toBottomOf="@id/comment_view"
+        app:layout_constraintVertical_bias="0.15" />
 
     <VideoView
         android:id="@+id/video_view"
@@ -63,8 +65,10 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <com.airbnb.lottie.LottieAnimationView
