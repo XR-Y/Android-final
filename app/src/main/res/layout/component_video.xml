@@ -13,8 +13,9 @@
         >
         <ImageView
             android:layout_marginTop="200dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="25dp"
             android:id="@+id/ic_avatar"
+            android:background="@drawable/ic_avatar"
             android:layout_centerHorizontal="true"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -35,8 +36,8 @@
             android:layout_marginTop="5dp"
             android:layout_marginRight="10dp"
             android:gravity="center_horizontal"
-            android:textSize="13sp"
-            android:text="202000"/>
+            android:textSize="11sp"
+            android:text="4420.21w"/>
 
         <ImageButton
             android:layout_width="40dp"
@@ -53,7 +54,7 @@
             android:layout_marginRight="10dp"
             android:gravity="center_horizontal"
             android:textSize="13sp"
-            android:text="404503"/>
+            android:text="4.34w"/>
 
         <ImageButton
             android:layout_width="40dp"
@@ -71,7 +72,7 @@
             android:layout_marginRight="10dp"
             android:layout_marginBottom="100dp"
             android:gravity="center_horizontal"
-            android:text="102466"
+            android:text="10.21w"
             android:textSize="13sp" />
     </LinearLayout>
 
@@ -92,6 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:textSize="20sp"
+            android:textStyle="bold"
             android:text="-@dlwlrma"/>
 
         <TextView
@@ -106,6 +108,7 @@
             android:focusableInTouchMode="true"
             android:marqueeRepeatLimit="marquee_forever"
             android:singleLine="true"
+            android:textStyle="bold"
             android:text="TextView" />
 
         <TextView
@@ -119,7 +122,7 @@
             android:focusableInTouchMode="true"
             android:marqueeRepeatLimit="marquee_forever"
             android:singleLine="true"
-            android:text="Forever Young????????????"
+            android:text="果粉之家-创作"
             android:textSize="20sp" />
 
     </LinearLayout>

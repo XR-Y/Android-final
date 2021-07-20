@@ -55,7 +55,10 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
 
         holder.videoView.setVideoPath(videoData.getFeedUrl());
         Glide.with(this.curActivity).load(videoData.getAvatar()).into(holder.avatarView);
-        holder.mLikeNum.setText(videoData.getLikeCount() + "");
+        double x = (videoData.getLikeCount() + 1)/10000.0;
+        java.text.DecimalFormat df = new java.text.DecimalFormat("#.00");
+        String tmp = df.format(x);
+        holder.mLikeNum.setText(tmp + "w");
         holder.mNickView.setText(videoData.getNickname());
         holder.mDesView.setText(videoData.getDescription());
         Glide.with(curActivity).load(R.drawable.ic_button_like_red).into(holder.imageView);
@@ -144,8 +147,11 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
                             holder.imageView.setVisibility(View.VISIBLE);
                             holder.imageView.bringToFront();
                             Glide.with(curActivity).load(R.drawable.ic_button_like_red).into(holder.likeButton);
+                            double x = (videoData.getLikeCount() + 1)/10000.0;
+                            java.text.DecimalFormat df = new java.text.DecimalFormat("#.00");
+                            String tmp = df.format(x);
                             videoData.setLikeCount(videoData.getLikeCount() + 1);
-                            holder.mLikeNum.setText(videoData.getLikeCount() + "");
+                            holder.mLikeNum.setText(tmp + "w");
                             v.postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
