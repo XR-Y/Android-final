@@ -1,16 +1,19 @@
 package com.example.finalproject;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -54,6 +57,7 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
         holder.mLikeNum.setText(tmp + "w");
         holder.mNickView.setText(videoData.getNickname());
         holder.mDesView.setText(videoData.getDescription());
+        holder.textView.setText("最新评论：送我上热评");
         Glide.with(curActivity).load(R.drawable.ic_button_like_red).into(holder.imageView);
 
 
@@ -98,9 +102,10 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
             @Override
             public void onClick(View view) {
                 String comment = holder.getComment.getText().toString();
+                VideoActivity.hideKeyboard((Activity) curActivity, holder.getComment);
                 holder.ensure.setVisibility(View.INVISIBLE);
                 holder.getComment.setVisibility(View.INVISIBLE);
-                holder.textView.setText(comment);
+                holder.textView.setText("最新评论：" + comment);
             }
         });
 

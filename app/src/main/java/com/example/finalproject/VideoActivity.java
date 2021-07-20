@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -16,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -145,72 +148,10 @@ public class VideoActivity extends AppCompatActivity {
 //        initNetVideo();
     }
 
-//    @Override
-//    protected void onPostResume() {
-//        super.onPostResume();
-//        viewPager2.forceLayout();
-//    }
 
-    //    private void initNetVideo() {
-//        VideoData videoData = Videos.videos.get(Videos.curVideoId);
-//        mVideoView.setVideoPath(Videos.getUrl(videoData.getFeedUrl()));
-//        mLikeNum.setText(Integer.toString(videoData.getLikeCount()));
-//        mNickView.setText(videoData.getNickname());
-//        mDesView.setText(videoData.getDescription());
-//        mVideoView.start();
-//
-//        mVideoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-//            @Override
-//            public void onCompletion(MediaPlayer mp) {
-//                mVideoView.start();
-//            }
-//        });
-//
-//        mVideoView.setOnTouchListener(new View.OnTouchListener() {
-//
-//            @Override
-//            public boolean onTouch(View v, MotionEvent event) {
-//                if (mVideoView.isPlaying()) {
-//                    mVideoView.pause();
-//                } else {
-//                    mVideoView.start();
-//                }
-//                return false;
-//            }
-//        });
-//    }
+    public static void hideKeyboard(Activity activity, View view) {
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
 
-
-//    Handler videoHandler = new Handler() {
-//        @Override
-//        public void handleMessage(Message msg) {
-//            super.handleMessage(msg);
-//            switch (msg.what) {
-//                case 777:
-//                    viewPagerAdapter = new ViewPagerAdapter();
-//                    viewPager2.setAdapter(viewPagerAdapter);
-////                case 888:
-//////                    initNetVideo();
-////                    break;
-//            }
-//        }
-//    };
-//
-//    class LoadVideoThread extends Thread {
-//        @Override
-//        public void run() {
-//            super.run();
-//            Videos.getVideos();
-//            while (Videos.videos == null) {
-//                try {
-//                    sleep(10);
-//                } catch (InterruptedException ex) {
-//                    ex.printStackTrace();
-//                }
-//            }
-//            Message message = new Message();
-//            message.what = 777;
-//            videoHandler.sendMessage(message);
-//        }
-//    }
 }

@@ -84,7 +84,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="60dp"
-        android:layout_width="200dp"
+        android:layout_width="400dp"
         android:layout_height="wrap_content">
 
         <TextView
@@ -123,7 +123,7 @@
             android:focusableInTouchMode="true"
             android:marqueeRepeatLimit="marquee_forever"
             android:singleLine="true"
-            android:text="xdm送我上热评"
+            android:text="最新评论：送我上热评"
             android:textStyle="italic"
             android:textSize="20sp" />
 
