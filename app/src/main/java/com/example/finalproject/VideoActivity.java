@@ -16,6 +16,8 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -92,16 +94,14 @@ public class VideoActivity extends AppCompatActivity {
 //                .bitmapTransform(new CropCircleTransformation(this))
 //                .into(mAvatarView);
 
-        mSearchBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+
+        mSearchBtn.setOnClickListener(v -> {
 //                mVideoView.pause();
-                Log.d(TAG, "In OnClick");
-                startActivity(new Intent(VideoActivity.this, SearchActivity.class));
-                // 去除进场动画
-                overridePendingTransition(0, 0);
-                finish();
-            }
+            Log.d(TAG, "In OnClick");
+            startActivity(new Intent(VideoActivity.this, SearchActivity.class));
+            // 去除进场动画
+            overridePendingTransition(0, 0);
+            finish();
         });
 
         mHomeBtn.setOnClickListener(new View.OnClickListener() {

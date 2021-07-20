@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -28,9 +30,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.ViewPagerViewHolder> {
-
-//    private GlideThread glideThread = new GlideThread();
-//    private View view;
     private Context curActivity;
     public ViewPagerAdapter(Context context){
         curActivity = context;
@@ -38,8 +37,6 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
     @NonNull
     @Override
     public ViewPagerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_pager_video, parent,false);
-//        glideThread.start();
         return new ViewPagerViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.view_pager_video, parent,false));
     }
 
@@ -47,7 +44,6 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
     @Override
     public void onBindViewHolder(@NonNull ViewPagerViewHolder holder, int position) {
         Videos.curVideoId = position;
-//        Log.d("aaaaa", String.valueOf(position));
         VideoData videoData = Videos.videos.get(Videos.curVideoId);
 
         holder.videoView.setVideoPath(videoData.getFeedUrl());
@@ -71,26 +67,9 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
         holder.animationView.setVisibility(View.VISIBLE);
         holder.animationView.bringToFront();
         holder.animationView.playAnimation();
-//        Log.d("111", "111");
-//        Glide.with(curActivity).load(videoData.getAvatar()).into(holder.imageView);
-//        holder.imageView.setVisibility(View.VISIBLE);
-//        holder.imageView.requestFocus();
-//        holder.videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-//            @Override
-//            public void onPrepared(MediaPlayer mp) {
-////                holder.videoView.setBackground();
-////                Log.d("123", "123");
-////                Glide.with(curActivity).load(videoData.getAvatar())
-//                holder.imageView.setVisibility(View.VISIBLE);
-//            }
-//        });
 
         holder.videoView.start();
         Log.d("123", String.valueOf(holder.videoView.isPlaying()));
-//        holder.backgroundView.setVisibility(View.INVISIBLE);
-//        holder.backgroundView.setVisibility(View.INVISIBLE);
-//        holder.imageView.setVisibility(View.INVISIBLE);
-//        File file = Glide.with(curActivity).load().downloadOnly()
 
         holder.videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -103,6 +82,25 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
             @Override
             public void onCompletion(MediaPlayer mp) {
                 holder.videoView.start();
+            }
+        });
+
+        holder.mCommentBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                holder.ensure.setVisibility(View.VISIBLE);
+                holder.getComment.setVisibility(View.VISIBLE);
+                holder.getComment.bringToFront();
+            }
+        });
+
+        holder.ensure.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String comment = holder.getComment.getText().toString();
+                holder.ensure.setVisibility(View.INVISIBLE);
+                holder.getComment.setVisibility(View.INVISIBLE);
+                holder.textView.setText(comment);
             }
         });
 
@@ -213,6 +211,11 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
         public ImageButton likeButton;
         public ImageView backgroundView;
         public LottieAnimationView animationView;
+        public ImageButton mCommentBtn;
+        public Button ensure;
+        public EditText getComment;
+        public TextView textView;
+
         public ViewPagerViewHolder(@NonNull View itemView) {
             super(itemView);
             videoView = itemView.findViewById(R.id.video_view);
@@ -224,44 +227,11 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
             likeButton = itemView.findViewById(R.id.like_button);
             backgroundView = itemView.findViewById(R.id.background_view);
             animationView = itemView.findViewById(R.id.animation_view);
+            ensure = itemView.findViewById(R.id.comment_btn);
+            getComment = itemView.findViewById(R.id.comment_view);
+            mCommentBtn = itemView.findViewById(R.id.comment);
+            textView = itemView.findViewById(R.id.text_song);
         }
     }
-//    Handler glideHandler = new Handler() {
-//        @Override
-//        public void handleMessage(Message msg) {
-//            super.handleMessage(msg);
-//            ImageView imageView = view.findViewById(R.id.image_view);
-//            switch (msg.what) {
-//                case 777:
-//                    Glide.with(Videos.curActivity).load(Videos.videos.get(Videos.curVideoId).getAvatar()).into(imageView);
-//                    imageView.setVisibility(View.VISIBLE);
-//                    break;
-//                case 888:
-//                    imageView.setVisibility(View.INVISIBLE);
-//                    break;
-//            }
-//        }
-//    };
-//    class GlideThread extends Thread {
-//        @Override
-//        public void run() {
-//            super.run();
-//            VideoView videoView = view.findViewById(R.id.video_view);
-//            Message message = new Message();
-//            message.what = 777;
-//            glideHandler.sendMessage(message);
-//            while (!videoView.isPlaying()) {
-//                try {
-//                    sleep(10);
-////                    Log.d("123", "123");
-//                } catch (InterruptedException ex) {
-//                    ex.printStackTrace();
-//                }
-//            }
-//            Message message1 = new Message();
-//            message1.what = 888;
-//            glideHandler.sendMessage(message1);
-//        }
-//    }
 }
 

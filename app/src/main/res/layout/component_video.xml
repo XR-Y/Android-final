@@ -40,6 +40,7 @@
             android:text="4420.21w"/>
 
         <ImageButton
+            android:id="@+id/comment"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
@@ -93,7 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:textSize="20sp"
-            android:textStyle="bold"
+            android:textStyle="bold|italic"
             android:text="-@dlwlrma"/>
 
         <TextView
@@ -122,7 +123,8 @@
             android:focusableInTouchMode="true"
             android:marqueeRepeatLimit="marquee_forever"
             android:singleLine="true"
-            android:text="果粉之家-创作"
+            android:text="xdm送我上热评"
+            android:textStyle="italic"
             android:textSize="20sp" />
 
     </LinearLayout>
