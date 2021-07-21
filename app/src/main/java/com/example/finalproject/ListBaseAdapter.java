@@ -41,7 +41,7 @@ public class ListBaseAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        holder.listItemImageView.setBackgroundResource(R.mipmap.ic_launcher_round);
+        holder.listItemImageView.setBackgroundResource(R.drawable.ic_user0);
         holder.viewHolderIndex.setText(String.valueOf(title[position]));
         return convertView;
     }

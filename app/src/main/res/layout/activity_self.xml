@@ -39,8 +39,9 @@
                 android:layout_centerHorizontal="true"
                 android:layout_margin="20dp"
                 android:text="张三"
+                android:textStyle="bold"
                 android:textColor="#000000"
-                android:textSize="17sp" />
+                android:textSize="25sp" />
 
         </RelativeLayout>
 

@@ -103,7 +103,7 @@ public class StoreActivity extends AppCompatActivity {
                 AlertDialog alertDialog1 = new AlertDialog.Builder(StoreActivity.this)
                         .setTitle(title[position])//标题
                         .setMessage(args[position])//内容
-                        .setIcon(R.mipmap.ic_launcher)//图标
+                        .setIcon(R.drawable.ic_user0)//图标
                         .create();
                 alertDialog1.show();
             }
