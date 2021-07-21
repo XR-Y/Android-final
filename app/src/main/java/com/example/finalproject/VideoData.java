@@ -2,9 +2,6 @@ package com.example.finalproject;
 
 import com.google.gson.annotations.SerializedName;
 
-/**
- * @author willy
- */
 public class VideoData{
     @SerializedName("_id")
     private String id;

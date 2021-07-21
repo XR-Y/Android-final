@@ -36,9 +36,6 @@ public class VideoActivity extends AppCompatActivity {
     public String KEY_TYPE_FROM = "type_from";
 
     public VideoView mVideoView;
-    public TextView mSongView;
-    public TextView mNickView;
-    public TextView mDesView;
     public ImageButton mHomeBtn;
     public ImageButton mSearchBtn;
     public ImageButton mAddBtn;
@@ -60,10 +57,6 @@ public class VideoActivity extends AppCompatActivity {
 
 //        Videos.curActivity = this;
         mVideoView = findViewById(R.id.video_view);
-        mSongView = findViewById(R.id.text_song);
-        //mSongView.setSelected(true);  //解决跑马灯失效
-        mNickView = findViewById(R.id.text_nickname);
-        mDesView = findViewById(R.id.description);
 
         mHomeBtn = findViewById(R.id.btn_home);
         mSearchBtn = findViewById(R.id.btn_search);
@@ -74,11 +67,6 @@ public class VideoActivity extends AppCompatActivity {
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
         viewPager2.setAdapter(viewPagerAdapter);
-//        viewPager2.setCurrentItem(Videos.curVideoId);
-
-//        Log.d("asdf", String.valueOf(Videos.curVideoId));
-
-//        loadVideoThread.start();
 
         //获取Intent 检查是主页的还是搜索得来的 0是主页 1是搜索
         Intent intent = getIntent();
@@ -116,6 +104,16 @@ public class VideoActivity extends AppCompatActivity {
                 intent.putExtra(KEY_TYPE_FROM, 0);
                 startActivity(intent);
                 // 去除进场动画
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
+
+        mAddBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(VideoActivity.this, MyVideoActivity.class);
+                startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();
             }
