@@ -134,6 +134,16 @@ public class SelfActivity extends AppCompatActivity {
             }
         });
 
+        mAddBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SelfActivity.this, MyVideoActivity.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
+
         mStoreBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {

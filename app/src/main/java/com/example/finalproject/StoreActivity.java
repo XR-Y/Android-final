@@ -63,6 +63,16 @@ public class StoreActivity extends AppCompatActivity {
             }
         });
 
+        mAddBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(StoreActivity.this, MyVideoActivity.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
+
         mStoreBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {

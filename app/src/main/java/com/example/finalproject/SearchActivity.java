@@ -84,6 +84,16 @@ public class SearchActivity extends AppCompatActivity{
             }
         });
 
+        mAddBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SearchActivity.this, MyVideoActivity.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
+
         mSelfBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
