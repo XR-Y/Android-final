@@ -26,7 +26,6 @@ import java.io.IOException;
 
 
 public class MyVideoActivity extends AppCompatActivity {
-    private VideoView videoView;
 
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
 

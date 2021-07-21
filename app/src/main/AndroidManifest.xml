@@ -31,8 +31,9 @@
         android:theme="@style/AppTheme">
     <activity android:name=".SelfActivity" />
     <activity android:name=".StoreActivity" />
-        <activity android:name=".VideoActivity" />
-        <activity android:name=".MyVideoActivity" />
+    <activity android:name=".VideoActivity" />
+    <activity android:name=".MyVideoActivity" />
+    <activity android:name=".ShowVideoActivity" />
     <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

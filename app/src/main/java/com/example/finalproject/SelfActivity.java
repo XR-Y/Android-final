@@ -84,12 +84,14 @@ public class SelfActivity extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                AlertDialog alertDialog1 = new AlertDialog.Builder(SelfActivity.this)
-                        .setTitle(btn1.getText())//标题
-                        .setMessage("\n\n\n\n\n                             收藏为空                   \n\n\n\n\n\n\n")//内容
-                        .setIcon(R.drawable.ic_star)//图标
-                        .create();
-                alertDialog1.show();
+//                AlertDialog alertDialog1 = new AlertDialog.Builder(SelfActivity.this)
+//                        .setTitle(btn1.getText())//标题
+//                        .setMessage("\n\n\n\n\n                             收藏为空                   \n\n\n\n\n\n\n")//内容
+//                        .setIcon(R.drawable.ic_star)//图标
+//                        .create();
+//                alertDialog1.show();
+                Intent intent = new Intent(SelfActivity.this, ShowVideoActivity.class);
+                startActivity(intent);
             }
         });
 

@@ -12,9 +12,6 @@ import android.os.Message;
 
 import com.airbnb.lottie.LottieAnimationView;
 
-/**
- * @author Owen
- */
 public class MainActivity extends AppCompatActivity {
 
     public String TAG = "MainActivity";
