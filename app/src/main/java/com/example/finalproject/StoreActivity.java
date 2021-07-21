@@ -69,7 +69,6 @@ public class StoreActivity extends AppCompatActivity {
                 Intent intent = new Intent(StoreActivity.this, MyVideoActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
-                finish();
             }
         });
 

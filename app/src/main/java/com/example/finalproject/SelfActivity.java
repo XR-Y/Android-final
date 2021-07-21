@@ -140,7 +140,6 @@ public class SelfActivity extends AppCompatActivity {
                 Intent intent = new Intent(SelfActivity.this, MyVideoActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
-                finish();
             }
         });
 
@@ -167,7 +166,7 @@ public class SelfActivity extends AppCompatActivity {
         });
 
 
-        Glide.with(this).load(R.drawable.ic_blur)
+        Glide.with(this).load(R.drawable.ic_blurr)
                 .apply(RequestOptions.bitmapTransform(new CircleCrop()))
                 .into(blurImageView);
 
