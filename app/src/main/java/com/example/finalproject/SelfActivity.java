@@ -157,15 +157,15 @@ public class SelfActivity extends AppCompatActivity {
         });
 
 
-        Glide.with(this).load(R.drawable.ic_avatar)
+        Glide.with(this).load(R.drawable.ic_blur)
                 .apply(RequestOptions.bitmapTransform(new CircleCrop()))
                 .into(blurImageView);
 
-        Glide.with(this).load(R.drawable.ic_avatar)
+        Glide.with(this).load(R.drawable.ic_user)
                 .apply(RequestOptions.bitmapTransform(new CircleCrop()))
                 .into(avatarImageView);
 
-        userNameTextView.setText("用户A");
+        userNameTextView.setText("刘记大光火锅鸡");
     }
 
 }
