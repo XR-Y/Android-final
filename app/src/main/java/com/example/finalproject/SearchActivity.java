@@ -120,9 +120,6 @@ public class SearchActivity extends AppCompatActivity{
                         break;
                     }
                 }
-//                intent.putExtra("nickname", fit_list.get(position));
-////                intent.putExtra("song", so_list.get(position));
-//                intent.putExtra("description", cor_list.get(position));
                 intent.putExtra(KEY_TYPE_FROM, 1);
                 startActivity(intent);
             }
@@ -141,22 +138,6 @@ public class SearchActivity extends AppCompatActivity{
             //单机搜索按钮时激发该方法
             @Override
             public boolean onQueryTextSubmit(String query) {
-
-//                for (String s: nickname_list){
-//                    if (fitString(query, s)){
-//                        fit_list.add(s);
-//                    }
-//                }
-//
-//                for (String s: description_list){
-//                    if (fitString(query, s)){
-//                        String desToNick = nickname_list[Arrays.binarySearch(description_list, s)];
-//                        if (!fit_list.contains(desToNick)){
-//                            fit_list.add(desToNick);
-//                        }
-//                    }
-//                }
-//                assert Videos.videos != null;
                 for(VideoData videoData:Videos.videos){
                     if(fitString(query, videoData.getNickname())){
                         fit_list.add(videoData.getNickname());
@@ -171,7 +152,6 @@ public class SearchActivity extends AppCompatActivity{
                 }
                 Log.d(TAG + "fit_list", String.valueOf(fit_list.size()));
                 if (fit_list.isEmpty()){
-//                    Toast.makeText(SearchActivity.this,"有匹配的内容",Toast.LENGTH_SHORT).show();
                     Toast.makeText(SearchActivity.this, "无匹配的内容", Toast.LENGTH_SHORT).show();
                     return false;
                 }

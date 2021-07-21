@@ -100,12 +100,6 @@ public class StoreActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                if (mToast != null) {
-//                    mToast.cancel();
-//                }
-//                String toastMessage = "Item #" + position + " clicked.";
-//                mToast = Toast.makeText(StoreActivity.this, toastMessage, Toast.LENGTH_LONG);
-//                mToast.show();
                 AlertDialog alertDialog1 = new AlertDialog.Builder(StoreActivity.this)
                         .setTitle(title[position])//标题
                         .setMessage(args[position])//内容

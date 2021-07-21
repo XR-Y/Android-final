@@ -27,10 +27,6 @@ public class VideoActivity extends AppCompatActivity {
     public ImageButton mSelfBtn;
 
     public Bundle tmpBundle;
-//    public String nickname;
-//    public String song;
-
-//    private LoadVideoThread loadVideoThread = new LoadVideoThread();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +35,6 @@ public class VideoActivity extends AppCompatActivity {
         actionBar.hide();
         setContentView(R.layout.activity_video);
 
-//        Videos.curActivity = this;
         mVideoView = findViewById(R.id.video_view);
 
         mHomeBtn = findViewById(R.id.btn_home);
@@ -58,20 +53,12 @@ public class VideoActivity extends AppCompatActivity {
             // 搜索得来的
             Log.d(TAG, String.valueOf(Videos.curVideoId));
             viewPager2.setCurrentItem(Videos.curVideoId);
-//            Message message = new Message();
-//            message.what = 888;
-//            videoHandler.sendMessage(message);
         }
 
         tmpBundle = new Bundle();
 
-//        Glide.with(this).load(R.drawable.ic_avatar)
-//                .bitmapTransform(new CropCircleTransformation(this))
-//                .into(mAvatarView);
-
 
         mSearchBtn.setOnClickListener(v -> {
-//                mVideoView.pause();
             Log.d(TAG, "In OnClick");
             startActivity(new Intent(VideoActivity.this, SearchActivity.class));
             // 去除进场动画
@@ -125,8 +112,6 @@ public class VideoActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-//        initNetVideo();
     }
 
 

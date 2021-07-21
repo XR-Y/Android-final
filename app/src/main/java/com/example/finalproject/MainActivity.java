@@ -40,9 +40,6 @@ public class MainActivity extends AppCompatActivity {
             switch (msg.what) {
                 case 777:
                     initNetVideo();
-//                case 888:
-////                    initNetVideo();
-//                    break;
             }
         }
     };
