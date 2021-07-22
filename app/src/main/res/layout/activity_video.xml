@@ -9,13 +9,15 @@
 
     <androidx.viewpager2.widget.ViewPager2
         android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_height="629dp"
         android:id="@+id/viewpager2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:orientation="vertical"/>
+        android:orientation="vertical"
+        android:layout_marginBottom="100dp"/>
+
 
     <include layout="@layout/component_home" />
 
