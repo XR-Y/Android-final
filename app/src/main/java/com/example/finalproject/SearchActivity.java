@@ -152,7 +152,7 @@ public class SearchActivity extends AppCompatActivity{
                 }
                 Log.d(TAG + "fit_list", String.valueOf(fit_list.size()));
                 if (fit_list.isEmpty()){
-                    Toast.makeText(SearchActivity.this, "无匹配的内容", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SearchActivity.this, "暂无匹配内容，小抖期待您的创作", Toast.LENGTH_SHORT).show();
                     return false;
                 }
                 return false;
