@@ -16,10 +16,9 @@ public class StoreActivity extends AppCompatActivity {
 
     public String KEY_TYPE_FROM = "type_from";
 
-    private Toast mToast;
-    private String[] args = {"亲爱的用户您好，\n注册成功将会看到本则消息，\n也代表您可以继续使用本APP，\n请放心使用，\n再次祝您使用愉快！",
-            "亲爱的用户您好，\n以下帮助可以协助您使用本APP,\n1........\n2.......\n3........"};
-    private String[] title = {"注册成功提示", "使用说明"};
+    private String[] args = {"亲爱的用户您好，\n小抖已经在这里等您好久了，\n请放心使用该APP，\n再次祝您使用愉快！",
+            "以下帮助可以协助您快速熟悉本应用,\n1........\n2.......\n3........"};
+    private String[] title = {"恭喜您注册成功", "使用说明"};
 
     public ImageButton mHomeBtn;
     public ImageButton mSearchBtn;

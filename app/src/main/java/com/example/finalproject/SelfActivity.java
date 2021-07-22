@@ -98,7 +98,7 @@ public class SelfActivity extends AppCompatActivity {
         btn2.setOnClickListener(v -> {
             AlertDialog alertDialog1 = new AlertDialog.Builder(SelfActivity.this)
                     .setTitle(btn2.getText())//标题
-                    .setMessage("当前版本： 18.0.0.2\n\n\n为当前最新版本，无需更新")//内容
+                    .setMessage("当前版本： 20.21.7.22\n\n\n已经是最新版本啦")//内容
                     .setIcon(R.drawable.ic_beta)//图标
                     .create();
             alertDialog1.show();
@@ -107,7 +107,7 @@ public class SelfActivity extends AppCompatActivity {
         btn3.setOnClickListener(v -> {
             AlertDialog alertDialog1 = new AlertDialog.Builder(SelfActivity.this)
                     .setTitle(btn3.getText())//标题
-                    .setMessage("开发团队为二人，若有任何疑问请寄邮件至:\n\n\naaaaaaaa@gmail.com\n\n\n感谢配合！")//内容
+                    .setMessage("本应用由吉吉团队开发维护，若有任何疑问或建议请寄邮件至:\n\n\niwannagohome@gmail.com\n\n\n感谢配合！")//内容
                     .setIcon(R.drawable.ic_help)//图标
                     .create();
             alertDialog1.show();

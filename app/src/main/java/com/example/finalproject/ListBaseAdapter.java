@@ -9,9 +9,9 @@ import android.widget.TextView;
 public class ListBaseAdapter extends BaseAdapter {
 
     private static final int NUM_LIST_ITEMS = 2;
-    private String[] args = {"亲爱的用户您好，注册成功将会看到本则消息，也代表您可以继续使用本APP，请放心使用",
-            "亲爱的用户您好，以下帮助可以协助您使用本APP, ........"};
-    private String[] title = {"注册成功提示", "使用说明"};
+    private String[] args = {"亲爱的用户您好，\n小抖已经在这里等您好久了，\n请放心使用该APP，\n再次祝您使用愉快！",
+            "以下帮助可以协助您快速熟悉本应用,\n1........\n2.......\n3........"};
+    private String[] title = {"恭喜您注册成功", "使用说明"};
 
     @Override
     public int getCount() {
