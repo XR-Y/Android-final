@@ -69,7 +69,6 @@ public class VideoActivity extends AppCompatActivity {
         mHomeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                mVideoView.pause();
                 Log.d(TAG, "In OnClick");
                 Intent intent = new Intent(VideoActivity.this, VideoActivity.class);
                 intent.putExtra(KEY_TYPE_FROM, 0);

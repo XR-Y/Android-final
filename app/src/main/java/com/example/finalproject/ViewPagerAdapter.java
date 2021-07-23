@@ -168,7 +168,6 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
                                 v.postDelayed(new Runnable() {
                                     @Override
                                     public void run() {
-                                        // 这里会在 1s 后执行
                                         holder.imageView.setVisibility(View.INVISIBLE);
                                     }
                                 }, 1000);
