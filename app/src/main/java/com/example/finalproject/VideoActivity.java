@@ -51,8 +51,8 @@ public class VideoActivity extends AppCompatActivity {
         Intent intent = getIntent();
         if (intent.getIntExtra(KEY_TYPE_FROM, 0) == 1) {
             // 搜索得来的
-            Log.d(TAG, String.valueOf(Videos.curVideoId));
-            viewPager2.setCurrentItem(Videos.curVideoId);
+            Log.d(TAG, String.valueOf(FetchVideos.curVideoId));
+            viewPager2.setCurrentItem(FetchVideos.curVideoId);
         }
 
         tmpBundle = new Bundle();

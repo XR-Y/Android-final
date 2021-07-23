@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         setContentView(R.layout.activity_main);
-        Videos.getVideos();
+        FetchVideos.getVideos();
         animationView = findViewById(R.id.animation_view);
         animationView.playAnimation();
         loadVideoThread.start();
@@ -57,15 +57,15 @@ public class MainActivity extends AppCompatActivity {
         public void run() {
             super.run();
 //            Videos.getVideos();
-            while (Videos.videos == null) {
+            while (FetchVideos.videos == null) {
                 try {
                     sleep(10);
                 } catch (InterruptedException ex) {
                     ex.printStackTrace();
                 }
             }
-            for(VideoData videoData:Videos.videos){
-                Videos.getHttpBitmap(videoData.getFeedUrl());
+            for(VideoData videoData: FetchVideos.videos){
+                FetchVideos.getHttpBitmap(videoData.getFeedUrl());
             }
             Message message = new Message();
             message.what = 777;

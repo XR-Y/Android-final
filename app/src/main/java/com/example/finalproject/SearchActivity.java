@@ -113,10 +113,10 @@ public class SearchActivity extends AppCompatActivity{
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(SearchActivity.this, VideoActivity.class);
-                for(int i = 0 ; i < Videos.videos.size() ; ++i){
-                    VideoData videoData = Videos.videos.get(i);
+                for(int i = 0; i < FetchVideos.videos.size() ; ++i){
+                    VideoData videoData = FetchVideos.videos.get(i);
                     if(videoData.getNickname().equals(fit_list.get(position))){
-                        Videos.curVideoId = i;
+                        FetchVideos.curVideoId = i;
                         break;
                     }
                 }
@@ -138,7 +138,7 @@ public class SearchActivity extends AppCompatActivity{
             //单机搜索按钮时激发该方法
             @Override
             public boolean onQueryTextSubmit(String query) {
-                for(VideoData videoData:Videos.videos){
+                for(VideoData videoData: FetchVideos.videos){
                     if(fitString(query, videoData.getNickname())){
                         fit_list.add(videoData.getNickname());
                         Log.d(TAG + "nick", videoData.getNickname());
@@ -228,7 +228,7 @@ public class SearchActivity extends AppCompatActivity{
             }
 
             for (String s: fit_list){
-                for(VideoData videoData :Videos.videos){
+                for(VideoData videoData : FetchVideos.videos){
                     if(videoData.getNickname().equals(s)){
                         cor_list.add(videoData.getDescription());
                     }

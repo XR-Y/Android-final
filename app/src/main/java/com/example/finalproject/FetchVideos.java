@@ -25,7 +25,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class Videos {
+public class FetchVideos {
 
     public static ArrayList<VideoData> videos;
 

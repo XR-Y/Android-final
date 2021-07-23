@@ -4,16 +4,13 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -46,8 +43,8 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
     @SuppressLint({"ClickableViewAccessibility", "SetTextI18n"})
     @Override
     public void onBindViewHolder(@NonNull ViewPagerViewHolder holder, int position) {
-        Videos.curVideoId = position;
-        VideoData videoData = Videos.videos.get(Videos.curVideoId);
+        FetchVideos.curVideoId = position;
+        VideoData videoData = FetchVideos.videos.get(FetchVideos.curVideoId);
 
         holder.videoView.setVideoPath(videoData.getFeedUrl());
         Glide.with(this.curActivity)
@@ -65,7 +62,7 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
 
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        Videos.getHttpBitmap(videoData.getFeedUrl()).compress(Bitmap.CompressFormat.PNG, 100, baos);
+        FetchVideos.getHttpBitmap(videoData.getFeedUrl()).compress(Bitmap.CompressFormat.PNG, 100, baos);
         byte[] bytes = baos.toByteArray();
         Glide.with(curActivity).load(bytes).into(holder.backgroundView);
 
@@ -207,7 +204,7 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
 
     @Override
     public int getItemCount() {
-        return Videos.videos.size();
+        return FetchVideos.videos.size();
     }
 
 
