@@ -58,16 +58,15 @@ public class FetchVideos {
     }
 
     public static Bitmap getHttpBitmap(String url){
-        //首先先从缓存中取数据
+        //尝试从缓存中取数据
         Bitmap bitmap = bitmapCache.get(url);
         if(bitmap != null){
-            //如果取到就直接返回
+            //取到则直接返回
             return bitmap;
         }
 
         MediaMetadataRetriever retriever = new MediaMetadataRetriever();
         try {
-            //根据url获取缩略图
             retriever.setDataSource(url, new HashMap());
             //获得第一帧图片
             bitmap = retriever.getFrameAtTime();
