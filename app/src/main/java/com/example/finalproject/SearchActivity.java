@@ -76,7 +76,7 @@ public class SearchActivity extends AppCompatActivity{
         mStoreBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SearchActivity.this, StoreActivity.class);
+                Intent intent = new Intent(SearchActivity.this, MessageActivity.class);
                 startActivity(intent);
                 // 去除进场动画
                 overridePendingTransition(0, 0);

@@ -10,9 +10,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.Toast;
 
-public class StoreActivity extends AppCompatActivity {
+public class MessageActivity extends AppCompatActivity {
 
     public String KEY_TYPE_FROM = "type_from";
 
@@ -32,7 +31,7 @@ public class StoreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
-        setContentView(R.layout.activity_store);
+        setContentView(R.layout.activity_message);
 
         mHomeBtn = findViewById(R.id.btn_home);
         mSearchBtn = findViewById(R.id.btn_search);
@@ -43,7 +42,7 @@ public class StoreActivity extends AppCompatActivity {
         mSearchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(StoreActivity.this, SearchActivity.class));
+                startActivity(new Intent(MessageActivity.this, SearchActivity.class));
                 // 去除进场动画
                 overridePendingTransition(0, 0);
                 finish();
@@ -53,7 +52,7 @@ public class StoreActivity extends AppCompatActivity {
         mHomeBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(StoreActivity.this, VideoActivity.class);
+                Intent intent = new Intent(MessageActivity.this, VideoActivity.class);
                 intent.putExtra(KEY_TYPE_FROM, 0);
                 startActivity(intent);
                 // 去除进场动画
@@ -65,7 +64,7 @@ public class StoreActivity extends AppCompatActivity {
         mAddBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(StoreActivity.this, MyVideoActivity.class);
+                Intent intent = new Intent(MessageActivity.this, MyVideoActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -74,7 +73,7 @@ public class StoreActivity extends AppCompatActivity {
         mStoreBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(StoreActivity.this, StoreActivity.class);
+                Intent intent = new Intent(MessageActivity.this, MessageActivity.class);
                 startActivity(intent);
                 // 去除进场动画
                 overridePendingTransition(0, 0);
@@ -85,7 +84,7 @@ public class StoreActivity extends AppCompatActivity {
         mSelfBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(StoreActivity.this, SelfActivity.class);
+                Intent intent = new Intent(MessageActivity.this, SelfActivity.class);
                 startActivity(intent);
                 // 去除进场动画
                 overridePendingTransition(0, 0);
@@ -99,7 +98,7 @@ public class StoreActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                AlertDialog alertDialog1 = new AlertDialog.Builder(StoreActivity.this)
+                AlertDialog alertDialog1 = new AlertDialog.Builder(MessageActivity.this)
                         .setTitle(title[position])//标题
                         .setMessage(args[position])//内容
                         .setIcon(R.drawable.ic_user0)//图标

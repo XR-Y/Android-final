@@ -93,7 +93,7 @@ public class VideoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                mVideoView.pause();
-                Intent intent = new Intent(VideoActivity.this, StoreActivity.class);
+                Intent intent = new Intent(VideoActivity.this, MessageActivity.class);
                 startActivity(intent);
                 // 去除进场动画
                 overridePendingTransition(0, 0);

@@ -33,7 +33,7 @@ public class ListBaseAdapter extends BaseAdapter {
         ViewHolder holder = null;
         if (convertView == null) {
             holder = new ViewHolder();
-            convertView = View.inflate(parent.getContext(), R.layout.component_store_list, null);
+            convertView = View.inflate(parent.getContext(), R.layout.component_message_list, null);
             holder.listItemImageView = (ImageView) convertView.findViewById(R.id.tv_item_img);
             holder.viewHolderIndex = (TextView) convertView.findViewById(R.id.tv_view_holder_instance);
             convertView.setTag(holder);
